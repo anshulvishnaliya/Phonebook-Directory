@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
+    <!-- Toastr notification library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/toastr.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+    <title>College Project</title>
+</head>
+
+<body>
+    <div class="header">
+        <div class="headingcontainer">
+            <h1 class="heading">PhoneBook</h1>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="formcontainer">
+            <div class="add-update-button-container">
+                <button id="add-toggle" class="active">Add</button>
+                <button id="update-toggle">Update</button>
+            </div>
+
+            <form id="addcontactform">
+                <div class="formheader">
+                    <h1>Add Contact</h1>
+                </div>
+
+                <div class="formcontent contactdiv">
+                    <input type="text" id="contact" placeholder="Contact" required>
+                </div>
+
+                <div class="formcontent namediv">
+                    <input type="text" id="name" placeholder="Name" required>
+                </div>
+
+                <div class="formcontent addressdiv">
+                    <input type="text" id="address" placeholder="Address" required>
+                </div>
+
+                <div class="formcontent citydiv">
+                    <input type="text" id="city" placeholder="City" required>
+                </div>
+
+                <button id="addentry" class="buttons">Add</button>
+                <button type="reset" class="buttons reset">Clear</button>
+            </form>
+
+            <form id="updatecontactform" class="hidden">
+                <div class="formheader">
+                    <h1>Update Contact</h1>
+                </div>
+
+                <div class="formcontent">
+                    <input type="text" id="id" placeholder="Id" required>
+                </div>
+                <div class="formcontent contactdiv">
+                    <input type="text" id="ucontact" placeholder="Contact" required>
+                </div>
+
+                <div class="formcontent namediv">
+                    <input type="text" id="uname" placeholder="Name" required>
+                </div>
+
+                <div class="formcontent addressdiv">
+                    <input type="text" id="uaddress" placeholder="Address" required>
+                </div>
+
+                <div class="formcontent citydiv">
+                    <input type="text" id="ucity" placeholder="City" required>
+                </div>
+
+                <button id="updateentry" class="buttons">Update</button>
+                <button type="reset" class="buttons reset">Clear</button>
+            </form>
+        </div>
+
+        <div class="responsecontainer">
+            <div class="formheader">
+                <h1>Contacts</h1>
+                <input type="text" id="search-input" placeholder="Search By Contact"><button id="search-button">Search</button>
+            </div>
+
+            <div class="teble-container">
+                <table id="contacttable">
+                    <thead>
+                        <th>Id</th>
+                        <th>Contact</th>
+                        <th>Name</th>
+                        <th>Address</th>
+                        <th>City</th>
+                        <th>Action</th>
+                    </thead>
+
+                    <tbody>
+                        <!-- Data will be added Dynamically here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+     <!-- Confirmation Dialog -->
+     <div id="confirmationDialog">
+        <div class="dialog-content">
+            <p>Do you want to delete?</p>
+            <button id="confirmDelete">Yes</button>
+            <button id="cancelDelete">No</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
